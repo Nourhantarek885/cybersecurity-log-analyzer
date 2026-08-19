@@ -51,10 +51,24 @@ analyzeButton.addEventListener("click", function () {
         `Unique IPs: ${ips.size}`;
 
     if (failed >= 5) {
-        alertMessage.textContent =
-            "🚨 Alert: High number of failed login attempts!";
-    } else {
-        alertMessage.textContent =
-            "✅ Status: No suspicious login activity detected.";
-    }
+
+    alertMessage.textContent =
+        "🚨 CRITICAL: High number of failed login attempts!";
+
+    alertMessage.className = "critical";
+
+} else if (failed >= 3) {
+
+    alertMessage.textContent =
+        "⚠️ WARNING: Multiple failed login attempts detected.";
+
+    alertMessage.className = "warning";
+
+} else {
+
+    alertMessage.textContent =
+        "🟢 NORMAL: No suspicious login activity detected.";
+
+    alertMessage.className = "normal";
+}
 });
