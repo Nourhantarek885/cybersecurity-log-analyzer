@@ -147,13 +147,25 @@ button:hover {
 
     text-align: center;
 
-    color: #facc15 !important;
+    padding: 20px !important;
 
-    background: #1c1b12 !important;
+    color: #fbbf24 !important;
 
-    border-color: #51491d !important;
+    background: linear-gradient(
+        135deg,
+        #211c0d,
+        #30260d
+    ) !important;
+
+    border: 1px solid #80651a !important;
+
+    border-left: 5px solid #f59e0b !important;
+
+    font-size: 16px;
+
+    box-shadow:
+        0 0 20px rgba(245, 158, 11, 0.08);
 }
-
 #suspiciousIPs {
     grid-column: 1 / -1;
 
