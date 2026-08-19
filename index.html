@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cybersecurity Log Analyzer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🔐 Cybersecurity Log Analyzer</h1>
+
+        <p>
+            Analyze sample security logs and identify
+            suspicious login activity.
+        </p>
+
+        <textarea
+            id="logInput"
+            placeholder="Paste sample logs here..."
+        ></textarea>
+
+        <button id="analyzeButton">
+            Analyze Logs
+        </button>
+
+        <div class="results">
+
+            <h2>📊 Analysis Results</h2>
+
+            <p id="totalLogs">
+                Total Events: 0
+            </p>
+
+            <p id="failedLogins">
+                Failed Logins: 0
+            </p>
+
+            <p id="successfulLogins">
+                Successful Logins: 0
+            </p>
+
+            <p id="uniqueIPs">
+                Unique IPs: 0
+            </p>
+
+            <p id="alertMessage">
+                Status: Waiting for analysis...
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
