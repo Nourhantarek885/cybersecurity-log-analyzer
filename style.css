@@ -239,3 +239,41 @@ button:hover {
         opacity: 1;
     }
 }
+#alertMessage.normal {
+    color: #4ade80 !important;
+
+    background: #0d2117 !important;
+
+    border-color: #1f7a4d !important;
+
+    border-left-color: #22c55e !important;
+
+    box-shadow:
+        0 0 20px rgba(34, 197, 94, 0.08);
+}
+
+#alertMessage.warning {
+    color: #facc15 !important;
+
+    background: #211d0b !important;
+
+    border-color: #80651a !important;
+
+    border-left-color: #eab308 !important;
+
+    box-shadow:
+        0 0 20px rgba(234, 179, 8, 0.08);
+}
+
+#alertMessage.critical {
+    color: #f87171 !important;
+
+    background: #241012 !important;
+
+    border-color: #7f2630 !important;
+
+    border-left-color: #ef4444 !important;
+
+    box-shadow:
+        0 0 25px rgba(239, 68, 68, 0.12);
+}
