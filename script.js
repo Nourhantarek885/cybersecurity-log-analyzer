@@ -7,6 +7,8 @@ const successfulLogins = document.getElementById("successfulLogins");
 const uniqueIPs = document.getElementById("uniqueIPs");
 const alertMessage = document.getElementById("alertMessage");
 
+const suspiciousIPs =
+    document.getElementById("suspiciousIPs");
 analyzeButton.addEventListener("click", function () {
 
     const logs = logInput.value
@@ -18,12 +20,39 @@ analyzeButton.addEventListener("click", function () {
     let successful = 0;
 
     const ips = new Set();
+    const failedByIP = {};
 
     logs.forEach(function (log) {
+        const suspicious = Object.keys(failedByIP)
+    .filter(ip => failedByIP[ip] >= 3);
 
-        if (log.includes("FAILED")) {
-            failed++;
-        }
+if (suspicious.length > 0) {
+
+    suspiciousIPs.textContent =
+        `Suspicious IPs: ${suspicious.join(", ")}`;
+
+} else {
+
+    suspiciousIPs.textContent =
+        "Suspicious IPs: None";
+}
+
+      if (log.includes("FAILED")) {
+
+    failed++;
+
+    const ipMatch = log.match(
+        /\b(?:\d{1,3}\.){3}\d{1,3}\b/
+    );
+
+    if (ipMatch) {
+
+        const ip = ipMatch[0];
+
+        failedByIP[ip] =
+            (failedByIP[ip] || 0) + 1;
+    }
+}
 
         if (log.includes("SUCCESS")) {
             successful++;
